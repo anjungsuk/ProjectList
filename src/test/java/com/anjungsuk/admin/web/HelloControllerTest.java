@@ -1,4 +1,4 @@
-package web;
+package com.anjungsuk.admin.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,10 +31,10 @@ public class HelloControllerTest {
         int amount = 1000;
 
         mvc.perform(get("/hello/dto")
-            .param("name",name)
+            .param("name",name) //api 테스트시 사용될 파라미터 지정 부
             .param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name", is(name)))
+                .andExpect(jsonPath("$.name", is(name))) //JSON으로 돌아오는 응답값 검증 부
                 .andExpect(jsonPath("$.amount", is(amount)));
                 //.andExpect(jsonPath("$.name", is(name)))
                 //.andExpect(jsonPath("$.amount", is(amount)));

@@ -1,4 +1,4 @@
-package web.dto;
+package com.anjungsuk.admin.web.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
