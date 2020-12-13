@@ -1,0 +1,35 @@
+{{>layout/header}}
+
+<h1>자유게시판</h1>
+<div class ="col-md-12">
+    <div class="row">
+        <div class = "col-md-6">
+            <a href="/posts/save" role="button" class ="btn btn-primary"> 글등록 </a>
+        </div>
+    </div>
+    <br>
+    <!----목록 구현부-->
+    <table class="table table-horizontal tabel-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>게시글 번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>최종 수정일</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#posts}} <!---자바 포문과 동일 List를 반복한다-->
+            <tr>
+                <!--DB 객체 필드를 불러온다-->
+                <td>{{id}}</td>
+                <td><a href ="/posts/update/{{id}}">{{title}}</td>
+                <td>{{author}}</td>
+                <td>{{modifieldDate}}</td>
+
+            </tr>
+        {{/posts}}
+        </tbody>
+    </table>
+</div>
+{{>layout/footer}}

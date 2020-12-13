@@ -85,7 +85,7 @@ public class PostsApiControllerTest {
                 exchange(uri, HttpMethod.PUT, requestEntity, Long.class);
         //then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(responseEntity.getBody()).isGreaterThan(0L);
+        assertThat(responseEntity.getBody()).isGreaterThan(0L);//getbody에서 실제 값보다 주어진 값이 큰지 비교
         List<Posts> all = postRepository.findAll();
         assertThat(all.get(0).getTitle()).isEqualTo(expectedTitle);
         assertThat(all.get(0).getContent()).isEqualTo(expectedContent);
