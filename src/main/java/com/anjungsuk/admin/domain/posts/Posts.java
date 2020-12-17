@@ -14,6 +14,7 @@ public class Posts extends BaseTimeEntity{ //DB Query 생성 클래스
     @GeneratedValue(strategy = GenerationType.IDENTITY) //primary key 생성규칙을 나타냄
     private Long Id;
     @Column(length = 500, nullable = false) // 테이블 칼럼 생성
+    
     private String title;
     @Column(columnDefinition = "TEXT", nullable = false) // 테이블 칼럼 생성
     private String content;

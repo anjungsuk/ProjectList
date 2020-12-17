@@ -35,5 +35,6 @@ dependencies {
     compile('com.h2database:h2')
     testImplementation("org.assertj:assertj-core:3.18.1")
     compile('org.springframework.boot:spring-boot-starter-mustache')
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 
 }
